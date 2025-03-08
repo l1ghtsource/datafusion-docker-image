@@ -3,7 +3,7 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - main  # Запускать сборку при пуше в ветку main
+      - main # Запускать сборку при пуше в ветку main
 
 jobs:
   build-and-push:
@@ -24,4 +24,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/my-custom-df25:1.0
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/my-custom-lgbm-df25:1.0
