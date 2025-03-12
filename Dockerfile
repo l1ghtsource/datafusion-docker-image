@@ -12,4 +12,4 @@ RUN apt-get update && \
         curl \
         git \
         libomp-dev && \
-    pip install "lightgbm==4.5.0" datasets transformers
+    pip install dill pymorphy3 nltk datasets transformers
