@@ -10,5 +10,7 @@ RUN apt-get update && \
         curl \
         git \
         libomp-dev \
-        python3-dev && \
+        python3.11-dev && \
+    pip install --upgrade pip setuptools wheel && \
+    pip install pybind11 && \
     pip install dill pymorphy3 nltk datasets transformers fasttext
