@@ -5,4 +5,6 @@ RUN apt-get update && apt-get install -y \
     python3.12-dev \
     && rm -rf /var/lib/apt/lists/*
 	
-RUN pip install dill pymorphy3 nltk datasets transformers fasttext
+RUN apt install python3 python3-pip
+	
+RUN pip3 install dill pymorphy3 nltk datasets transformers fasttext
