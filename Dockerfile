@@ -1,6 +1,7 @@
 FROM odsai/df25-baseline:1.0
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y 
+	git \
     build-essential \
     python3.12-dev \
     && rm -rf /var/lib/apt/lists/*
