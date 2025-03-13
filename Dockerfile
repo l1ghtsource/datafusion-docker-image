@@ -9,6 +9,4 @@ RUN apt-get update && apt-get install -y \
 RUN pip install --upgrade pip setuptools wheel
 RUN pip install dill pymorphy3 nltk datasets transformers
 
-RUN git clone https://github.com/facebookresearch/fastText.git
-WORKDIR /fastText
-RUN pip install .
+RUN pip install git+https://github.com/facebookresearch/fastText.git
