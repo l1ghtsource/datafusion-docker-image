@@ -9,7 +9,6 @@ RUN apt-get update && \
         g++ \
         curl \
         git \
-        libomp-dev \
-        python3.11-dev && \
+        libomp-dev && \
     pip install --upgrade pip setuptools wheel && \
-    pip install dill pymorphy3 nltk datasets transformersfasttext-wheel
+    pip install dill pymorphy3 nltk datasets transformers fasttext-wheel
