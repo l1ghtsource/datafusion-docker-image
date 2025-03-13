@@ -12,5 +12,4 @@ RUN apt-get update && \
         libomp-dev \
         python3.11-dev && \
     pip install --upgrade pip setuptools wheel && \
-    pip install pybind11 && \
-    pip install dill pymorphy3 nltk datasets transformers fasttext
+    pip install dill pymorphy3 nltk datasets transformersfasttext-wheel
