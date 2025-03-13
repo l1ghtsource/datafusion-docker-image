@@ -12,4 +12,4 @@ RUN apt-get update && \
         curl \
         git \
         libomp-dev && \
-    pip install dill pymorphy3 nltk datasets transformers
+    pip install dill pymorphy3 nltk datasets transformers fasttext
