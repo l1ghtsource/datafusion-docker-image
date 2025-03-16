@@ -193,6 +193,7 @@ class CSVMarkupApp:
         except Exception as e:
             messagebox.showerror("Ошибка", f"Не удалось сохранить файл: {str(e)}")
 
+
 if __name__ == "__main__":
     root = tk.Tk()
     app = CSVMarkupApp(root)

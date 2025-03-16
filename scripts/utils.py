@@ -1,6 +1,7 @@
 import pandas as pd
 from collections import defaultdict
 import json
+import math
 
 
 def analyze_category_tree(cat_df):
@@ -70,16 +71,33 @@ def analyze_category_tree(cat_df):
     return cat_df
 
 
-def parse_attr_to_dict(s):
-    fixed_data_str = s.replace('""', '"')
-    data = json.loads(fixed_data_str)
+def build_label_to_path(df):
+    df = df.copy()
+    df['parent_id'] = df['parent_id'].apply(
+        lambda x: None if (isinstance(x, float) and math.isnan(x)) else int(x) if x is not None else None
+    )
+    parent_map = dict(zip(df['cat_id'], df['parent_id']))
     
-    result = {}
-    for item in data:
-        key = item.get('attribute_name')
-        value = item.get('attribute_value', ''
-        if 'attribute_measure' in item:
-            value = f"{value} {item['attribute_measure']}"
-        result[key] = value
+    label_to_path = {}
     
-    return result
+    def get_path(cat):
+        path = []
+        cur = cat
+        while cur is not None:
+            path.append(cur)
+            cur = parent_map.get(cur, None)
+        return list(reversed(path))
+    
+    for cat in df['cat_id'].unique():
+        label_to_path[cat] = get_path(cat)
+    return label_to_path
+
+
+def lca_depth(path1, path2):
+    d = 0
+    for a, b in zip(path1, path2):
+        if a == b:
+            d += 1
+        else:
+            break
+    return d

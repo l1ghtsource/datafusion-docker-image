@@ -1,5 +1,6 @@
 import pandas as pd
-from utils import analyze_category_tree, parse_attr_to_dict
+from utils import analyze_category_tree
+from attr_parser import parse_attr_to_dict
 
 WORKDIR = '/kaggle/input/data-fusion-2025/'
 
