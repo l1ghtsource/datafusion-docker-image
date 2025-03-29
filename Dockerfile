@@ -7,4 +7,4 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 	
 RUN pip install --upgrade pip setuptools wheel
-RUN pip install dill pymorphy3 nltk datasets transformers faiss-cpu sentence_transformers
+RUN pip install faiss-cpu dill pymorphy3 nltk datasets transformers
