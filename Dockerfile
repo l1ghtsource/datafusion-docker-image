@@ -7,6 +7,6 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 	
 RUN pip install --upgrade pip setuptools wheel
-RUN pip install dill pymorphy3 nltk datasets transformers
+RUN pip install dill pymorphy3 nltk datasets transformers faiss-gpu
 
 RUN pip install git+https://github.com/facebookresearch/fastText.git
